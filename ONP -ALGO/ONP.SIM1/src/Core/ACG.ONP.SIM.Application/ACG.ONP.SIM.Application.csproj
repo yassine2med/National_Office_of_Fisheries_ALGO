@@ -1,0 +1,46 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>netcoreapp3.1</TargetFramework>
+        <RootNamespace>ACG.ONP.SIM.Application</RootNamespace>
+        <AssemblyName>ACG.ONP.SIM.Application</AssemblyName>
+    </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <NoWarn>1701;1702;1591</NoWarn>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="VehicleBookings\NewFolder\**" />
+    <Compile Remove="VehiclePurchases\Commands\SubmitVehiclePurchase\**" />
+    <Compile Remove="Vehicles\Commands\ValidateVehicleDocument\**" />
+    <EmbeddedResource Remove="VehicleBookings\NewFolder\**" />
+    <EmbeddedResource Remove="VehiclePurchases\Commands\SubmitVehiclePurchase\**" />
+    <EmbeddedResource Remove="Vehicles\Commands\ValidateVehicleDocument\**" />
+    <None Remove="VehicleBookings\NewFolder\**" />
+    <None Remove="VehiclePurchases\Commands\SubmitVehiclePurchase\**" />
+    <None Remove="Vehicles\Commands\ValidateVehicleDocument\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="IdValueDto.cs~RF759d69c.TMP" />
+  </ItemGroup>
+
+    <ItemGroup>
+        <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="7.0.0" />
+        <PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="8.6.0" />
+        <PackageReference Include="MediatR.Behaviors.Authorization" Version="1.1.0" />
+        <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="8.1.0" />
+        <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="3.1.8" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <Folder Include="Common\Mappings\" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\ACG.ONP.SIM.Domain\ACG.ONP.SIM.Domain.csproj" />
+    </ItemGroup>
+
+</Project>
